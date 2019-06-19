@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "b68781a6-d4b6-493e-bc80-a26f9d3f9c2a",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"me@stevesdavis.com\",\n\t\"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fName\": \"Steve\",\n\t\"lName\": \"Davis\",\n\t\"email\": \"mew@stevesdavis.com\",\n    \"password\": \"test\",\n    \"dateOfBirth\": \"07-16-1990\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDCard",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRjZjJkZjI1ODkwZDQzYWM4MjE1MjUiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzNTIwOTksImV4cCI6MTU0MTM1MzUzOX0.lF9b1SPON5ZGBAtamI1EpnQqwoQ0-EJu-N-mJZo4dVU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"5bdcf2df25890d43ac821525\",\n\t\"stateIdNumber\": \"74635\",\n\t\"state\": \"Texas\",\n\t\"expirationDate\": \"2020-07-16\",\n\t\"imagePath\": \"/test/abc.jpg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/idcard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"idcard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDCards",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/idcard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"idcard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDCard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzNzkyMzQsImV4cCI6MTU0MTM4MDY3NH0.BF7_WHMK4ww6rJuK6aB02dcuZYhP_BKtMPbXN3dDPxE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/idcard/5bdf4436c453ff7079c2761f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"idcard",
+						"5bdf4436c453ff7079c2761f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDCard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRjZjJkZjI1ODkwZDQzYWM4MjE1MjUiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzNTIwOTksImV4cCI6MTU0MTM1MzUzOX0.lF9b1SPON5ZGBAtamI1EpnQqwoQ0-EJu-N-mJZo4dVU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Florida\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/idcard/5bdf2aeed61f4f5486fb71cc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"idcard",
+						"5bdf2aeed61f4f5486fb71cc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDCard",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/idcard/5bdf4436c453ff7079c27620",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"idcard",
+						"5bdf4436c453ff7079c27620"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedRec",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRjZjJkZjI1ODkwZDQzYWM4MjE1MjUiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzNTIwOTksImV4cCI6MTU0MTM1MzUzOX0.lF9b1SPON5ZGBAtamI1EpnQqwoQ0-EJu-N-mJZo4dVU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"5bdcf2df25890d43ac821525\",\n  \"number\": \"1235234\",\n  \"issuer\": \"SomeIssuer\",\n  \"state\": \"Virginia\",\n  \"expirationDate\": \"2020-07-16\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/medrec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"medrec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedRecs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/medrec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"medrec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedRec",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRjZjJkZjI1ODkwZDQzYWM4MjE1MjUiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzNTIwOTksImV4cCI6MTU0MTM1MzUzOX0.lF9b1SPON5ZGBAtamI1EpnQqwoQ0-EJu-N-mJZo4dVU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/medrec/5bde622cc6c72842b357670d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"medrec",
+						"5bde622cc6c72842b357670d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedRec",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODA3MTAsImV4cCI6MTU0MTM4MjE1MH0.irRg_HhzQm9utTeHkN8Htfpy1cHUANRY8a92ajKlcHY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Texas\",\n    \"issuer\": \"Government\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/medrec/5bdf4436c453ff7079c2761d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"medrec",
+						"5bdf4436c453ff7079c2761d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedRec",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmRmNDQzNmM0NTNmZjcwNzljMjc2MWMiLCJ1c2VyRW1haWwiOiJtZUBzdGV2ZXNkYXZpcy5jb20iLCJpYXQiOjE1NDEzODEzODYsImV4cCI6MTU0MTM4MjgyNn0.xCpwOT7Wfn95xaZW3Jg8kdZocqHEGlh5XjxehmoBRK0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8980/api/v1/user/5bdf4436c453ff7079c2761c/medrec/5bdf4436c453ff7079c2761e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8980",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"5bdf4436c453ff7079c2761c",
+						"medrec",
+						"5bdf4436c453ff7079c2761e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
