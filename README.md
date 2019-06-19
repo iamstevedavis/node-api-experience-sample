@@ -6,7 +6,7 @@ index.js is the main script file for the demo app. You can run the app with npm 
 
 The token should also be able to be passed in the body or the query string. Please follow the steps outlined in Quick Start to get started.
 
-What I have demonstrated:
+What is demonstrated:
 
 Node
   - Understanding of async/sync calls with promises
