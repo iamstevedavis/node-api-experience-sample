@@ -3,6 +3,9 @@ Introduction
 index.js is the main script file for the demo app. You can run the app with npm run start. Any route that requires authentication will need to have in the header
 
     x-access-token: mytoken
+    Authorization: Bearer <token>
+
+Included is a Postman collection with all possible calls to the API.
 
 The token should also be able to be passed in the body or the query string. Please follow the steps outlined in Quick Start to get started.
 
@@ -75,9 +78,11 @@ DB_SCOPE=med
 3) Run 'npm run db:setup'
 4) Run 'npm start'
 
+Load up the included postman collection to make API calls.
+
 That is it!
 
-This will populate your database with the following:
+Your database should be populated with the following data after `npm run db:setup`:
 User:
     {
       fName: 'Steve',
