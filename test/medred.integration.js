@@ -40,7 +40,7 @@ describe('Medical Recommendation Integration Tests', () => {
           number: '12345',
           issuer: 'ASDF',
           state: 'Texas',
-          expirationDate: '2018-11-08T04:12:49.959Z',
+          expirationDate: `${new Date().getFullYear()}-11-08T04:12:49.959Z`,
         },
       ]));
 
@@ -62,7 +62,7 @@ describe('Medical Recommendation Integration Tests', () => {
               number: '12345',
               issuer: 'ASDF',
               state: 'Texas',
-              expirationDate: '2018-11-08T04:12:49.959Z',
+              expirationDate: `${new Date().getFullYear()}-11-08T04:12:49.959Z`,
             },
           ];
           response.should.have.status(200);

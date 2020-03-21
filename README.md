@@ -64,8 +64,16 @@ To get started you should follow these simple steps.
 If you are not using a default local mongodb install, update .env with the parameters for your mongodb instance or nothing will work.
 
 1) Run 'npm install'
-2) Run 'npm run db:setup'
-3) Run 'npm start'
+2) Setup a .env file with your particulars or use the following for a default mongo instance and database
+```
+DB_HOST=localhost
+DB_USER=
+DB_PASSWORD=
+DB_PORT=27017
+DB_SCOPE=med
+```
+3) Run 'npm run db:setup'
+4) Run 'npm start'
 
 That is it!
 

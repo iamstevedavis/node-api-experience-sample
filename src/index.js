@@ -20,9 +20,11 @@ dotenv.config();
 // Connect to database
 const dbUser = process.env.DB_USER;
 if (dbUser) {
-  mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_SCOPE}`);
+  mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_SCOPE}`,
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 } else {
-  mongoose.connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_SCOPE}`);
+  mongoose.connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_SCOPE}`,
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 }
 
 // eslint-disable-next-line new-cap
@@ -37,7 +39,6 @@ const server = restify.createServer({
   name: 'restify-api-example',
   version: '1.0.0',
   log,
-  handleUncaughtExceptions: true,
 });
 
 server.use(restify.plugins.requestLogger());

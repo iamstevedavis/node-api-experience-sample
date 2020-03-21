@@ -7,7 +7,11 @@ const User = require('../models/user');
  */
 function authenticate(req, res, next) {
   // check header or url parameters or post parameters for token
-  const token = (req.body && req.body.token) || req.query.token || req.headers['x-access-token'];
+  let token = req.headers['x-access-token'] || req.headers.authorization;
+  if (token.startsWith('Bearer ')) {
+    // Remove Bearer from string
+    token = token.slice(7, token.length);
+  }
 
   if (!token) {
     return next(new errs.ForbiddenError());
@@ -23,7 +27,7 @@ function authenticate(req, res, next) {
     });
   })
     .then((decoded) => {
-      // if everything is good, save to request for use in other routes
+      // if everything is good, save to request for use in routes
       req.decoded = decoded;
       return next();
     })
@@ -49,11 +53,10 @@ function getToken(req, res, next) {
         userEmail: user.email,
       };
       const token = jwt.sign(payload, 'secret', {
-        expiresIn: 1440, // expires in 24 hours
+        expiresIn: 1440,
       });
       res.json({
         success: true,
-        message: 'Enjoy your token!',
         token,
       });
       return next();
