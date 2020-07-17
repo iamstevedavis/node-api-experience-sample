@@ -16,7 +16,7 @@
     "bunyan": "^1.8.12",
     "dotenv": "^6.1.0",
     "jsonwebtoken": "^8.3.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mongoose": "^5.3.4",
     "restify": "^8.5.1",
     "restify-errors": "^6.1.1"
